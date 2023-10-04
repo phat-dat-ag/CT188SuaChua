@@ -38,20 +38,21 @@
       <img id="header2" src="./images/header-img2.png" alt="" />
       <img id="header3" src="./images/header-img3.png" alt="" />
     </header>
-    <main>
+    <main class="grid_1col">
       <h1>Liên hệ</h1>
-      <img src="./images/lienhe/check-in.png" alt="Liên hệ" />
-      <h1>Địa chỉ: 0123, Tòa Nhà ABC, TP. Cần Thơ</h1>
-      <p>
+      <div class="contact1">
+        <img src="./images/lienhe/check-in.png" alt="Liên hệ" />
+        <span>Địa chỉ: 0123, Tòa Nhà ABC, TP. Cần Thơ</span>
         Nếu bạn có góp ý, vui lòng liên hệ bằng thư điện tử hoặc sử dụng biểu
-        mẫu bên dưới. <br />
-        Xin cám ơn.
-      </p>
-      <fieldset>
-        <legend>Góp ý</legend>
+        mẫu bên dưới. Xin cám ơn.
+      </div>
+      <div class="comment-form">
+        <h1>Góp ý</h1>
         <table>
           <tr>
-            <td><label for="input-name">Họ Tên: </label></td>
+            <td>
+              <label for="input-name"><i class="fa-solid fa-user"></i> </label>
+            </td>
             <td>
               <input
                 id="input-name"
@@ -61,7 +62,11 @@
             </td>
           </tr>
           <tr>
-            <td><label for="input-email">Email:</label></td>
+            <td>
+              <label for="input-email"
+                ><i class="fa-solid fa-envelope"></i
+              ></label>
+            </td>
             <td>
               <input
                 id="input-email"
@@ -71,7 +76,9 @@
             </td>
           </tr>
           <tr>
-            <td><label for="">Chủ đề: </label></td>
+            <td>
+              <label for=""><i class="fa-solid fa-bars"></i> </label>
+            </td>
             <td>
               <select name="" id="" size="1">
                 <option value="1">Về Sản Phẩm/ Dịch Vụ</option>
@@ -102,7 +109,7 @@
             </td>
           </tr>
         </table>
-      </fieldset>
+      </div>
     </main>
     <footer>
       <p>

@@ -20,21 +20,24 @@
   grid-template-areas: "left-cell article-cell article-cell article-cell right-cell";
 }
 .grid-left {
+  position: relative;
   grid-area: left-cell;
   margin: 2px;
   padding: 5px;
-  text-align: center;
-  color: #fff;
+  text-align: justify;
+  color: #000;
 }
 .grid-article {
   grid-area: article-cell;
+  position: relative;
 }
 .grid-right {
+  position: relative;
   grid-area: right-cell;
   margin: 2px;
   padding: 5px;
-  text-align: center;
-  color: #fff;
+  text-align: justify;
+  color: #000;
 }
 /* Hết bố cục trong main */
 body {
@@ -55,8 +58,7 @@ header {
   position: relative;
   grid-area: header-cell;
   margin: 0 0 2px 0;
-  border-width: 1px;
-  border-color: #ccc7c8;
+  border: solid 1px #ccc7c8;
   border-radius: 5px;
   padding: 0 5px;
   height: 100px;
@@ -148,8 +150,7 @@ nav > a:hover {
 }
 main {
   grid-area: main-cell;
-  border-width: 1px;
-  border-color: #ccc7c8;
+  border: solid 1px #ccc7c8;
   border-radius: 5px;
   padding: 0 5px;
   background-image: #fff;
@@ -162,8 +163,7 @@ footer {
   grid-area: footer-cell;
   margin-top: 2px;
   border-radius: 5px;
-  border-width: 1px;
-  border-color: #ccc7c8;
+  border: solid 1px #ccc7c8;
   padding: 0 5px;
   text-align: center;
   color: #000;
@@ -197,7 +197,7 @@ h1::after {
   position: absolute;
   left: 50%;
   display: block;
-  margin: 12px 0 16px 0;
+  margin: 1px 0 16px 0;
   min-width: 200px;
   height: 3px;
   content: "";
@@ -250,4 +250,94 @@ h3 {
   width: 240px;
   display: block;
   margin: auto;
+}
+/* Bài tập 3 */
+.product-section {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  text-align: center;
+  color: #ed4190;
+}
+.product-section > div {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  margin: 3px;
+  border: solid 1px #dbd7d9;
+  border-radius: 5px;
+  padding: 0;
+  flex: 1;
+  text-align: center;
+  color: #ed4190;
+}
+.product-section p {
+  margin: 0 4px;
+}
+.product-section > div > img {
+  display: block;
+  margin: auto;
+}
+.product-section > div span {
+  display: block;
+  margin: 4px;
+  padding: 3px;
+  min-width: 100%;
+  text-align: center;
+  /* color: #fff; */
+}
+
+/* Bài tập 4 */
+/* Liên hệ */
+.contact1 img {
+  height: 20px;
+}
+.contact1 span {
+  font-weight: bold;
+}
+.comment-form {
+  margin: 0 auto;
+}
+/*Giới thiệu */
+#introduce-img {
+  width: 100%;
+}
+.introduce-section p {
+  text-align: justify;
+}
+main p {
+  text-align: justify;
+}
+/*Tin tức*/
+.grid-news {
+  display: grid;
+  grid-template-areas: "content content img";
+}
+.grid-news-img {
+  grid-area: img;
+}
+.grid-news-content {
+  grid: content;
+}
+.news h2 {
+  text-align: left !important;
+  margin: 8px 20px;
+}
+.news img {
+  width: 240px;
+}
+.news p {
+  margin: 0 20px;
+}
+/* Đăng ký */
+.sign-up {
+  margin: 0 auto;
+}
+/* Đăng nhập */
+.sign-in {
+  margin: 0 auto;
+}
+.sign-in img {
+  width: 240px;
 }

@@ -38,9 +38,9 @@
       <img id="header2" src="./images/header-img2.png" alt="" />
       <img id="header3" src="./images/header-img3.png" alt="" />
     </header>
-    <main>
-      <fieldset>
-        <legend>ĐĂNG NHẬP</legend>
+    <main class="grid_1col">
+      <div class="sign-in grid-article">
+        <h1>ĐĂNG NHẬP</h1>
         <table>
           <tr>
             <td colspan="2">
@@ -48,7 +48,11 @@
             </td>
           </tr>
           <tr>
-            <td><label for="input-email">Email</label></td>
+            <td>
+              <label for="input-email"
+                ><i class="fa-solid fa-envelope"></i
+              ></label>
+            </td>
             <td>
               <input
                 id="input-email"
@@ -59,7 +63,9 @@
             </td>
           </tr>
           <tr>
-            <td><label for="input-psw">Mật khẩu</label></td>
+            <td>
+              <label for="input-psw"><i class="fa-solid fa-key"></i></label>
+            </td>
             <td>
               <input
                 id="input-psw"
@@ -71,22 +77,22 @@
           </tr>
           <tr>
             <td colspan="2">
-              <input type="submit" value="Đăng Nhập" />
-              <input type="reset" value="Hủy" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <p>
+              <span>
                 Bạn quên
                 <a href="">Mật Khẩu?</a>
                 <input type="checkbox" name="remember" />
                 Ghi nhớ cho lần đăng nhập sau
-              </p>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="submit" value="Đăng Nhập" />
+              <input type="reset" value="Hủy" />
             </td>
           </tr>
         </table>
-      </fieldset>
+      </div>
     </main>
     <footer>
       <p>
