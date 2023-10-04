@@ -1,0 +1,253 @@
+/* Bài tập 1 */
+/* Bố cục trong main */
+.grid_1col {
+  display: grid;
+  grid-template-areas:
+    "left-cell"
+    "article-cell"
+    "right-cell";
+}
+.grid-2col-right {
+  display: grid;
+  grid-template-areas: "left-cell article-cell article-cell article-cell";
+}
+.grid-2col-left {
+  display: grid;
+  grid-template-areas: "article-cell article-cell article-cell right-cell";
+}
+.grid-3col {
+  display: grid;
+  grid-template-areas: "left-cell article-cell article-cell article-cell right-cell";
+}
+.grid-left {
+  grid-area: left-cell;
+  margin: 2px;
+  padding: 5px;
+  text-align: center;
+  color: #fff;
+}
+.grid-article {
+  grid-area: article-cell;
+}
+.grid-right {
+  grid-area: right-cell;
+  margin: 2px;
+  padding: 5px;
+  text-align: center;
+  color: #fff;
+}
+/* Hết bố cục trong main */
+body {
+  display: grid;
+  grid-template-areas:
+    "header-cell"
+    "nav-cell"
+    "main-cell"
+    "footer-cell";
+  margin: 0 auto;
+  border: 1px;
+  padding: 0 5px;
+  min-width: 1024px;
+  font-size: 1.2em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+header {
+  position: relative;
+  grid-area: header-cell;
+  margin: 0 0 2px 0;
+  border-width: 1px;
+  border-color: #ccc7c8;
+  border-radius: 5px;
+  padding: 0 5px;
+  height: 100px;
+  background-image: url(./images/header.png);
+}
+#header1 {
+  height: 100px;
+  position: absolute;
+  top: -30px;
+  animation: move1 3s forwards;
+}
+@keyframes move1 {
+  from {
+    left: 80%;
+  }
+  to {
+    left: 30%;
+  }
+}
+#header2 {
+  height: 70px;
+  position: absolute;
+  top: -5px;
+  animation: move2 3s forwards;
+}
+@keyframes move2 {
+  from {
+    left: 80%;
+  }
+  to {
+    left: 45%;
+  }
+}
+#header3 {
+  height: 80px;
+  position: absolute;
+  top: 0px;
+  animation: move3 3s forwards;
+}
+@keyframes move3 {
+  from {
+    left: 80%;
+  }
+  to {
+    left: 63%;
+  }
+}
+nav {
+  grid-area: nav-cell;
+  margin-top: 20px;
+}
+nav > a {
+  top: 0;
+  float: left;
+  margin: 3px;
+  border: 1px solid #fff;
+  padding: 2px 4px;
+  height: 20px;
+  text-align: center;
+  color: #ed4190;
+  font-size: 17px;
+  background-color: #ffffff80;
+  text-decoration: none;
+  box-shadow: 0 0 3px 0 #00000066, 0 0 2px 0 #0000004d;
+}
+nav > a:hover {
+  color: #fff;
+  background-color: #ed4190;
+}
+#search {
+  padding-top: 3px;
+  float: right;
+}
+.fa-magnifying-glass {
+  padding: 4px;
+  min-width: 30px;
+  text-align: center;
+  color: #fff;
+  background-color: #cddc39;
+  cursor: pointer;
+}
+.fa-cart-shopping {
+  padding: 4px;
+  min-width: 30px;
+  text-align: center;
+  color: #ed4190;
+  background-color: #cddc39;
+  cursor: pointer;
+}
+main {
+  grid-area: main-cell;
+  border-width: 1px;
+  border-color: #ccc7c8;
+  border-radius: 5px;
+  padding: 0 5px;
+  background-image: #fff;
+}
+main img {
+  border-radius: 5px;
+}
+
+footer {
+  grid-area: footer-cell;
+  margin-top: 2px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #ccc7c8;
+  padding: 0 5px;
+  text-align: center;
+  color: #000;
+}
+.icon-foot {
+  color: #ed4190;
+  text-decoration: none;
+}
+footer #return-top {
+  position: fixed;
+  right: 10px;
+  bottom: 5px;
+  height: 70px;
+  padding: 10px;
+  text-align: center;
+  color: #ed4190;
+  z-index: 100;
+}
+/* Bài tập 2 */
+h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  line-height: 34px;
+  margin: 12px 0 16px 0;
+  text-transform: uppercase;
+  text-align: center;
+  color: #f90b6d;
+  font-size: 28px;
+}
+h1::after {
+  position: absolute;
+  left: 50%;
+  display: block;
+  margin: 12px 0 16px 0;
+  min-width: 200px;
+  height: 3px;
+  content: "";
+  transform: skewX(-12deg) translateX(-50%);
+  background-image: radial-gradient(#cddc39, #fff);
+}
+h2 {
+  margin: 5px 0 10px;
+  text-align: center;
+  color: #f90b6d;
+  font-size: 24px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  line-height: 28px;
+}
+h3 {
+  margin: 5px 0 10px;
+  text-align: center;
+  color: #f90b6d;
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  line-height: 24px;
+}
+.introduce-content {
+  margin-bottom: 5px;
+  padding: 0 5px;
+  text-align: justify;
+  /* color: #fff; */
+}
+.instruction-content {
+  column-count: 2;
+}
+.break-point {
+  break-before: column;
+}
+.calling {
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: center;
+}
+.calling div {
+  display: inline-block;
+  border: solid 1px #ed4190;
+  border-radius: 5px;
+  padding-top: 5px;
+  min-width: 24%;
+}
+.calling div img {
+  width: 240px;
+  display: block;
+  margin: auto;
+}
