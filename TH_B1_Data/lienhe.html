@@ -48,67 +48,51 @@
       </div>
       <div class="comment-form">
         <h1>Góp ý</h1>
-        <table>
-          <tr>
-            <td>
-              <label for="input-name"><i class="fa-solid fa-user"></i> </label>
-            </td>
-            <td>
-              <input
-                id="input-name"
-                type="text"
-                placeholder="Vui lòng nhập Họ tên của bạn"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label for="input-email"
-                ><i class="fa-solid fa-envelope"></i
-              ></label>
-            </td>
-            <td>
-              <input
-                id="input-email"
-                type="email"
-                placeholder="Vui lòng nhập địa chỉ Email"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label for=""><i class="fa-solid fa-bars"></i> </label>
-            </td>
-            <td>
-              <select name="" id="" size="1">
-                <option value="1">Về Sản Phẩm/ Dịch Vụ</option>
-                <option value="2">Về Ưu Đãi Thành Viên</option>
-                <option value="3">Về Tin Tuyển Dụng</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <label for="">Nội dung:</label>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <textarea
-                name=""
-                id=""
-                cols="50"
-                rows="7"
-                placeholder="Nội dung cần liên hệ"
-              ></textarea>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <input type="submit" value="Gửi" />
-            </td>
-          </tr>
-        </table>
+        <form action="" method="get" onsubmit="return formValidate()">
+          <div class="form-group">
+            <label for="input-name"><i class="fa-solid fa-user"></i> </label>
+            <input
+              id="input-name"
+              name="name"
+              type="text"
+              minlength="4"
+              placeholder="Vui lòng nhập Họ tên của bạn"
+            />
+          </div>
+          <div class="form-group">
+            <label for="input-email"
+              ><i class="fa-solid fa-envelope"></i
+            ></label>
+            <input
+              id="input-email"
+              name="email"
+              type="email"
+              placeholder="Vui lòng nhập địa chỉ Email"
+            />
+          </div>
+          <div class="form-group">
+            <label for=""><i class="fa-solid fa-bars"></i> </label>
+            <select name="select" id="" size="1">
+              <option value="1">Về Sản Phẩm/ Dịch Vụ</option>
+              <option value="2">Về Ưu Đãi Thành Viên</option>
+              <option value="3">Về Tin Tuyển Dụng</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="">Nội dung:</label>
+            <textarea
+              name="contact"
+              id="input-contact"
+              cols="50"
+              rows="7"
+              minlength="10"
+              placeholder="Nội dung cần liên hệ"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Gửi" />
+          </div>
+        </form>
       </div>
     </main>
     <footer>
@@ -122,5 +106,40 @@
         /></a>
       </p>
     </footer>
+    <script src="./main.js"></script>
+    <script>
+      var formValidate = function () {
+        var name = document.getElementById("input-name");
+        if (name.value.length == 0) {
+          alert("Vui lòng nhập tên!");
+          name.focus();
+          return false;
+        }
+        var mail = document.getElementById("input-email");
+        var pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (mail.value == 0) {
+          alert("Vui lòng nhập email!");
+          mail.focus();
+          return false;
+        }
+        if (!pattern.test(mail.value)) {
+          alert("Email không hợp lệ!");
+          mail.focus();
+          return false;
+        }
+        var contact = document.getElementById("input-contact");
+        if (contact.value == 0) {
+          alert("Bạn chưa nhập nội dung cần liên hệ!");
+          contact.focus();
+          return false;
+        }
+        if (contact.value < 10) {
+          alert("Nội dung cần liên hệ chưa chi tiết!");
+          contact.focus();
+          return false;
+        }
+        return true;
+      };
+    </script>
   </body>
 </html>

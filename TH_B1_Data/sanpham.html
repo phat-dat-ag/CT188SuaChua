@@ -52,8 +52,15 @@
               <a href="">Xem chi tiết</a>
               <span>
                 Số Lượng:
-                <input type="number" min="0" max="100" size="3" value="0" />
-                <button>Đặt hàng</button>
+                <input
+                  id="sp001"
+                  type="number"
+                  min="0"
+                  max="100"
+                  size="3"
+                  value="0"
+                />
+                <button onclick="addCart('sp001')">Đặt hàng</button>
               </span>
             </p>
           </div>
@@ -67,8 +74,15 @@
               <a href="">Xem chi tiết</a>
               <span>
                 Số Lượng:
-                <input type="number" min="0" max="100" size="3" value="0" />
-                <button>Đặt hàng</button>
+                <input
+                  id="sp002"
+                  type="number"
+                  min="0"
+                  max="100"
+                  size="3"
+                  value="0"
+                />
+                <button onclick="addCart('sp002')">Đặt hàng</button>
               </span>
             </p>
           </div>
@@ -85,8 +99,15 @@
               <a href="">Xem chi tiết</a>
               <span>
                 Số Lượng:
-                <input type="number" min="0" max="100" size="3" value="0" />
-                <button>Đặt hàng</button>
+                <input
+                  id="sp003"
+                  type="number"
+                  min="0"
+                  max="100"
+                  size="3"
+                  value="0"
+                />
+                <button onclick="addCart('sp003')">Đặt hàng</button>
               </span>
             </p>
           </div>
@@ -107,8 +128,15 @@
               <a href="">Xem chi tiết</a>
               <span>
                 Số Lượng:
-                <input type="number" min="0" max="100" size="3" value="0" />
-                <button>Đặt hàng</button>
+                <input
+                  id="sp004"
+                  type="number"
+                  min="0"
+                  max="100"
+                  size="3"
+                  value="0"
+                />
+                <button onclick="addCart('sp004')">Đặt hàng</button>
               </span>
             </p>
           </div>
@@ -125,8 +153,15 @@
               <a href="">Xem chi tiết</a>
               <span>
                 Số Lượng:
-                <input type="number" min="0" max="100" size="3" value="0" />
-                <button>Đặt hàng</button>
+                <input
+                  id="sp005"
+                  type="number"
+                  min="0"
+                  max="100"
+                  size="3"
+                  value="0"
+                />
+                <button onclick="addCart('sp005')">Đặt hàng</button>
               </span>
             </p>
           </div>
@@ -143,8 +178,15 @@
               <a href="">Xem chi tiết</a>
               <span>
                 Số Lượng:
-                <input type="number" min="0" max="100" size="3" value="0" />
-                <button>Đặt hàng</button>
+                <input
+                  id="sp006"
+                  type="number"
+                  min="0"
+                  max="100"
+                  size="3"
+                  value="0"
+                />
+                <button onclick="addCart('sp006')">Đặt hàng</button>
               </span>
             </p>
           </div>
@@ -162,8 +204,15 @@
               <a href="">Xem chi tiết</a>
               <span>
                 Số Lượng:
-                <input type="number" min="0" max="100" size="3" value="0" />
-                <button>Đặt hàng</button>
+                <input
+                  id="sp007"
+                  type="number"
+                  min="0"
+                  max="100"
+                  size="3"
+                  value="0"
+                />
+                <button onclick="addCart('sp007')">Đặt hàng</button>
               </span>
             </p>
           </div>
@@ -180,8 +229,15 @@
               <a href="">Xem chi tiết</a>
               <span>
                 Số Lượng:
-                <input type="number" min="0" max="100" size="3" value="0" />
-                <button>Đặt hàng</button>
+                <input
+                  id="sp008"
+                  type="number"
+                  min="0"
+                  max="100"
+                  size="3"
+                  value="0"
+                />
+                <button onclick="addCart('sp008')">Đặt hàng</button>
               </span>
             </p>
           </div>
@@ -195,8 +251,15 @@
               <a href="">Xem chi tiết</a>
               <span>
                 Số Lượng:
-                <input type="number" min="0" max="100" size="3" value="0" />
-                <button>Đặt hàng</button>
+                <input
+                  id="sp009"
+                  type="number"
+                  min="0"
+                  max="100"
+                  size="3"
+                  value="0"
+                />
+                <button onclick="addCart('sp009')">Đặt hàng</button>
               </span>
             </p>
           </div>
@@ -214,5 +277,33 @@
         /></a>
       </p>
     </footer>
+    <script src="./main.js"></script>
+    <script>
+      var addCart = function (code) {
+        var input = document.getElementById(code);
+        //Số lượng nhập vào
+        var number = parseInt(input.value);
+
+        if (number > 100) {
+          alert("Bạn đã đặt quá số lượng tối đa!");
+        } else {
+          if (localStorage[code] == undefined) {
+            localStorage.setItem(code, number);
+          } else {
+            //Số lượng đã có trong giỏ hàng
+            var current = parseInt(localStorage.getItem(code));
+            if (current + number > 100) {
+              alert("Bạn vừa đặt tối đa 100 sản phẩm!");
+              localStorage.setItem(code, 100);
+            } else {
+              alert("Đã thêm vào giỏ hàng!");
+              localStorage.setItem(code, current + number);
+            }
+          }
+          // Hiển thị dữ liệu
+          console.log(localStorage);
+        }
+      };
+    </script>
   </body>
 </html>

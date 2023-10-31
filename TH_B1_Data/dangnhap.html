@@ -48,47 +48,40 @@
             </td>
           </tr>
           <tr>
-            <td>
-              <label for="input-email"
-                ><i class="fa-solid fa-envelope"></i
-              ></label>
-            </td>
-            <td>
-              <input
-                id="input-email"
-                type="emali"
-                name="email"
-                placeholder="Nhập email"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label for="input-psw"><i class="fa-solid fa-key"></i></label>
-            </td>
-            <td>
-              <input
-                id="input-psw"
-                type="password"
-                name="psw"
-                placeholder="Nhập mật khẩu"
-              />
-            </td>
-          </tr>
-          <tr>
             <td colspan="2">
-              <span>
-                Bạn quên
-                <a href="">Mật Khẩu?</a>
-                <input type="checkbox" name="remember" />
-                Ghi nhớ cho lần đăng nhập sau
-              </span>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <input type="submit" value="Đăng Nhập" />
-              <input type="reset" value="Hủy" />
+              <form action="" method="get" onsubmit="return formValidate()">
+                <div class="form-group">
+                  <label for="input-email"
+                    ><i class="fa-solid fa-envelope"></i
+                  ></label>
+                  <input
+                    id="input-email"
+                    type="emali"
+                    name="email"
+                    placeholder="Nhập email"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="input-psw"><i class="fa-solid fa-key"></i></label>
+                  <input
+                    id="input-psw"
+                    type="password"
+                    name="psw"
+                    minlength="8"
+                    placeholder="Nhập mật khẩu"
+                  />
+                </div>
+                <span>
+                  Bạn quên
+                  <a href="">Mật Khẩu?</a>
+                  <input type="checkbox" name="remember" />
+                  Ghi nhớ cho lần đăng nhập sau
+                </span>
+                <div class="form-group">
+                  <input type="submit" value="Đăng Nhập" />
+                  <input type="reset" value="Hủy" />
+                </div>
+              </form>
             </td>
           </tr>
         </table>
@@ -105,5 +98,34 @@
         /></a>
       </p>
     </footer>
+    <script src="./main.js"></script>
+    <script>
+      var formValidate = function () {
+        var mail = document.getElementById("input-email");
+        var pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (mail.value == 0) {
+          alert("Vui lòng nhập email!");
+          mail.focus();
+          return false;
+        }
+        if (!pattern.test(mail.value)) {
+          alert("Email không hợp lệ!");
+          mail.focus();
+          return false;
+        }
+        var pass = document.getElementById("input-psw");
+        if (pass.value.length == 0) {
+          alert("Vui lòng nhập mật khẩu");
+          pass.focus();
+          return false;
+        }
+        if (pass.value.length < 8) {
+          alert("Mật khẩu có ít nhất 8 ký tự!");
+          pass.focus();
+          return false;
+        }
+        return true;
+      };
+    </script>
   </body>
 </html>

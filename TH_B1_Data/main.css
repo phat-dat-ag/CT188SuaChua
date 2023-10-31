@@ -1,5 +1,8 @@
 /* Bài tập 1 */
 /* Bố cục trong main */
+* {
+  scroll-behavior: smooth;
+}
 .grid_1col {
   display: grid;
   grid-template-areas:

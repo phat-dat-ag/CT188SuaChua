@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đơn hàng</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="shortcut icon"
+      href="images/favicon.ico"
+      type="image/vnd.microsoft.icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="trangchu.html"
+        ><img src="./images/logo.png" alt="Logo của công ty" id="logo"
+      /></a>
+      <nav>
+        <a href="trangchu.html">Trang chủ</a>
+        <a href="gioithieu.html">Giới thiệu</a>
+        <a href="sanpham.html">Sản phẩm</a>
+        <a href="tintuc.html">Tin tức</a>
+        <a href="dangnhap.html">Đăng nhập</a>
+        <a href="dangky.html">Đăng ký</a>
+        <a href="lienhe.html">Liên hệ</a>
+      </nav>
+      <div id="search">
+        <input type="text" placeholder="Nhập nội dung cần tìm..." />
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+      </div>
+      <img id="header1" src="./images/header-img1.png" alt="" />
+      <img id="header2" src="./images/header-img2.png" alt="" />
+      <img id="header3" src="./images/header-img3.png" alt="" />
+    </header>
+    <main class="grid_1col">
+      <h1>Chi tiết đơn hàng</h1>
+      <table id="cart" border="1">
+        <thead>
+          <th>Hình Sản Phẩm</th>
+          <th>Tên Sản Phẩm</th>
+          <th>Số Lượng</th>
+          <th>Đơn Giá</th>
+          <th>Thành Tiền</th>
+          <th>Xóa</th>
+        </thead>
+        <tbody id="bodyTable"></tbody>
+
+        <tfoot>
+          <tr id="trA" align="right">
+            <td colspan="5">Thành tiền (A) = 0 đ</td>
+          </tr>
+          <tr id="trB" align="right">
+            <td colspan="5">Chiết Khấu (B) = 0.1xA = 0 đ</td>
+          </tr>
+          <tr id="trC" align="right">
+            <td colspan="5">Thuế (C) = 10% x (A-B) = 0 đ</td>
+          </tr>
+          <tr id="trD" align="right">
+            <td colspan="5">Tổng cộng (D) = A-B+C = 0 đ</td>
+          </tr>
+        </tfoot>
+      </table>
+    </main>
+    <footer>
+      <p>
+        2021 Bản quyền thuộc về FreeezeVN.
+        <a href=""><i class="icon-foot fa-brands fa-facebook"></i></a>
+        <a href=""><i class="icon-foot fa-brands fa-twitter"></i></a>
+        <a href=""><i class="icon-foot fa-brands fa-pinterest-p"></i></a>
+        <a href="#logo"
+          ><img id="return-top" src="./images/top.png" alt=""
+        /></a>
+      </p>
+    </footer>
+    <script src="./main.js"></script>
+  </body>
+</html>
