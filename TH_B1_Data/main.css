@@ -178,9 +178,9 @@ footer {
 footer #return-top {
   position: fixed;
   right: 10px;
-  bottom: 5px;
-  height: 70px;
-  padding: 10px;
+  bottom: 0px;
+  height: 60px;
+  padding: 10px 10px 0 10px;
   text-align: center;
   color: #ed4190;
   z-index: 100;

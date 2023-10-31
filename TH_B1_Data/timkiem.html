@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đơn hàng</title>
+    <title>Tìm Kiếm</title>
     <link rel="stylesheet" href="main.css" />
     <link
       rel="shortcut icon"
@@ -14,22 +14,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-    <style>
-      tr td {
-        text-align: center;
-      }
-      tr td i {
-        padding: 8px;
-      }
-      tfoot tr td {
-        text-align: right;
-      }
-      #tdD span {
-        color: red;
-        font-weight: bold;
-      }
-    </style>
   </head>
+
   <body>
     <header>
       <a href="trangchu.html"
@@ -53,35 +39,7 @@
       <img id="header2" src="./images/header-img2.png" alt="" />
       <img id="header3" src="./images/header-img3.png" alt="" />
     </header>
-    <main class="grid_1col">
-      <h1>Chi tiết đơn hàng</h1>
-      <table id="cart" border="1">
-        <thead>
-          <th style="width: 200px">Hình Sản Phẩm</th>
-          <th>Tên Sản Phẩm</th>
-          <th>Số Lượng</th>
-          <th>Đơn Giá</th>
-          <th>Thành Tiền</th>
-          <th>Xóa</th>
-        </thead>
-        <tbody id="bodyTable"></tbody>
-
-        <tfoot>
-          <tr align="right">
-            <td id="tdA" colspan="6">Thành tiền (A) = 0 đ</td>
-          </tr>
-          <tr align="right">
-            <td id="tdB" colspan="6">Chiết Khấu (B) = 0.1xA = 0 đ</td>
-          </tr>
-          <tr align="right">
-            <td id="tdC" colspan="6">Thuế (C) = 10% x (A-B) = 0 đ</td>
-          </tr>
-          <tr align="right">
-            <td id="tdD" colspan="6">Tổng cộng (D) = A-B+C = 0 đ</td>
-          </tr>
-        </tfoot>
-      </table>
-    </main>
+    <main class="grid_1col"></main>
     <footer>
       <p>
         2021 Bản quyền thuộc về FreeezeVN.
@@ -94,10 +52,5 @@
       </p>
     </footer>
     <script src="./main.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        showCart();
-      });
-    </script>
   </body>
 </html>
